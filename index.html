@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>| Moovie</title>
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="http://css-spinners.com/css/spinner/pulse.css" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link href="css/ct-paper.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="css/raterater.css" rel="stylesheet" />
+  <link href="dist/lity.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="fakeLoader"></div>
+  <nav class="navbar navbar-full navbar-fixed-top navbar-dark bg-inverse" style="border-radius: 0px;" id="top">
+    <a class="navbar-brand" href="home.html" onclick="window.location.reload(true);">MOOVIE</a>
+    <a id="browse" href="index.html" class="navbar-brand pull-xs-right ">Browse</a>
+    <form id="searchform" action="#">
+      <input id="searchquery" type="text" placeholder="Search (title,year)" class="form-control" />
+      <i class="fa fa-search" id="icon"></i>
+    </form>
+  </nav>
+  <br>
+  <br>
+  <div id="pulse" class="pulse-loader">
+  </div>
+  <div id="wholecontainer">
+    <div class="container">
+      <br>
+      <table class="table  table-hover">
+        <thead class="thead-default">
+          <tr>
+            <th data-sort="string">Name</th>
+            <th data-sort="int">Rating</th>
+            <th data-sort="int">Year</th>
+            <th data-sort="int">Seeds</th>
+            <th>Torrent</th>
+
+          </tr>
+        </thead>
+        <tbody id="container">
+          <tr id="template" class="animated fadeIn">
+              <td><a id="name" data-id="" href="javascript:void(0);" onclick="openwindow(this);">Mark</a></td>
+              <td id="rating"></td>
+              <td id="year"></td>
+              <td id="seeds"></td>
+              <td><a id="torrent1" href="#">720p</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <b id="pagecount">2</b> <b style="float:right;">| Page:</b>
+      <br>
+      <nav>
+        <ul class="pager">
+          <li><a class="btn btn-primary btn-fill btn-lg" style="border:none;" href="" id="prevpage">PREV</a></li>
+          <li><a class="btn btn-primary btn-fill btn-lg" style="border:none;" href="" id="nextpage">NEXT</a></li>
+          <li><a id="backbtn" class="btn btn-primary btn-fill btn-lg" style="border:none;" href="#" onclick="window.location.reload(true);">Back</a></li>
+        </ul>
+      </nav>
+      <br>
+    </div>
+
+  </div>
+  <div id="footer">
+    <div class="container">
+      <i class="fa fa-copyright"></i> <b class="footertext"> John Thachil - Powered By yts.ag</b>
+    </div>
+  </div>
+
+
+  <div class="modcontainer">
+    <div class="modal fade bd-example-modal-lg" data-toggle="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img id="modimg" src="https://yts.ag/assets/images/movies/the_caller_2011/medium-cover.jpg" alt="">
+              </div>
+              <div class="col-md-8">
+                <h5>Summary</h5>
+                <hr>
+                <p id="modsummary"></p>
+                <b id="modrat"></b>
+                <div id="modrating" class="ratebox" data-id="1" data-rating="2.2"></div>
+                <p id="genres"></p>
+                <a id="watch" class="venobox btn btn-primary" href="//www.youtube.com/watch?v=XSGBVzeBUbk" data-lity>Watch Trailer</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="left-side">
+              <a type="button" id="modlink" class="btn btn-danger btn-simple">720p</a>
+            </div>
+            <div class="divider"></div>
+            <div class="right-side">
+              <a type="button" id="modlink1" class="btn btn-danger btn-simple">1080p</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="justcontainer"></div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/sort.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $("#wholecontainer").hide(1);
+    $("#footer").hide(1);
+    $("table").stupidtable();
+  </script>
+  <script src="js/tether.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js" charset="utf-8"></script>
+  <script src="js/raterater.jquery.js" charset="utf-8"></script>
+  <script src="dist/lity.js"></script>
+  <script src="js/modhand.js" charset="utf-8"></script>
+</body>
+
+</html>

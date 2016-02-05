@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>| MOOVIE</title>
+  <style type="text/css" media="screen">
+    .image{
+      height:310px;
+      width: 200px;
+      object-fit:cover;
+      margin-left: 100px;
+      position: relative;
+    }
+
+  }
+  </style>
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="http://css-spinners.com/css/spinner/pulse.css" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link href="css/ct-paper.css" rel="stylesheet" />
+  <link href="css/home.css" rel="stylesheet" />
+  <link href="css/raterater.css" rel="stylesheet" />
+  <link href="dist/lity.css" rel="stylesheet">
+  <link href="css/atvImg.css" rel="stylesheet">
+  <script src="js/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-full navbar-fixed-top navbar-dark bg-inverse" style="border-radius: 0px;" id="top">
+    <a class="navbar-brand" href="home.html" onclick="window.location.reload(true);">MOOVIE</a>
+    <a id="browse" href="index.html" class="navbar-brand pull-xs-right ">Browse</a>
+  </nav>
+  <br>
+  <br>
+  <div class="container">
+    <h2 id="newuploads">New Uploads</h2>
+    <hr>
+  </div>
+  <div id="pulse" class="pulse-loader"></div>
+
+  <div id="wholecontainer">
+
+    <div id="scroll" class="row">
+
+    </div>
+  </div>
+  <div id="footer">
+    <div class="container">
+      <i class="fa fa-copyright"></i> <b class="footertext"> John Thachil - Powered by yts.ag</b>
+    </div>
+  </div>
+
+
+  <div class="modcontainer">
+    <div class="modal fade bd-example-modal-lg" data-toggle="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img id="modimg" src="https://yts.ag/assets/images/movies/the_caller_2011/medium-cover.jpg" alt="">
+              </div>
+              <div class="col-md-8">
+                <h5>Summary</h5>
+                <hr>
+                <p id="modsummary"></p>
+                <b id="modrat"></b>
+                <div id="modrating" class="ratebox" data-id="1" data-rating="2.2"></div>
+                <p id="genres"></p>
+                <a id="watch" class="venobox btn btn-primary" href="//www.youtube.com/watch?v=XSGBVzeBUbk" data-lity>Watch Trailer</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="left-side">
+              <a type="button" id="modlink" class="btn btn-danger btn-simple">720p</a>
+            </div>
+            <div class="divider"></div>
+            <div class="right-side">
+              <a type="button" id="modlink1" class="btn btn-danger btn-simple">1080p</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="justcontainer"></div>
+
+  <script type="text/javascript">
+    $("#wholecontainer").hide(1);
+    $("#footer").hide(1);
+  </script>
+  <script src="js/tether.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/atvImg-min.js" charset="utf-8"></script>
+  <script src="js/home.js" charset="utf-8"></script>
+  <script src="js/raterater.jquery.js" charset="utf-8"></script>
+  <script src="dist/lity.js"></script>
+  <script  src="js/modhand2.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(document).on('click', '#title', function() {
+    openwindow($(this).attr("data-id"))
+   });
+   $(document).on('click', 'div.image', function() {
+     var num = $(this).attr('class').match(/\d+$/)[0];
+     openwindow(num);
+    });
+
+  </script>
+
+</body>
+
+</html>

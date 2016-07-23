@@ -37,10 +37,9 @@ $(document).ready(function(){
     {
       $.ajax(
       {
-        url: "https://yts.ag/api/v2/list_movies.json?page="+pageno+"&limit=50&query_term="+search,
+        url: "https://yts.ag/api/v2/list_movies.jsonp?page="+pageno+"&limit=50&query_term="+search,
         type: 'GET',
         dataType: "json",
-        crossDomain: false,
         beforeSend: function() {
           $("#wholecontainer").fadeOut(1);
           $("#footer").fadeOut(1);
@@ -51,10 +50,10 @@ $(document).ready(function(){
          error: function (responseData, textStatus, errorThrown)
              {
                  console.warn(responseData, textStatus, errorThrown);
-                 alert('CORS failed - ' + textStatus);
+                //  alert('CORS failed - ' + textStatus);
              },
         success: function(result){
-
+          console.log(result);
           $("#pulse").fadeOut(1);
           $("#wholecontainer").fadeIn("slow");
           $("#footer").fadeIn("slow");

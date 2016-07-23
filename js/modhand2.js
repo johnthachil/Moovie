@@ -14,7 +14,7 @@ function openwindow(el) {
       var obj          = result.data;
       var movie        = obj.movie;
       var title        = movie.title_long;
-      var summary      = movie.summary;
+      var summary      = movie.description_full;
       var rating       = movie.rating;
       var image        = movie.medium_cover_image;
       var torrents     = movie.torrents;

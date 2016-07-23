@@ -7,10 +7,9 @@ $(document).ready(function(){
     {
       $.ajax(
       {
-        url: "https://yts.ag/api/v2/list_movies.json?page="+pageno+"&limit=20&query_term="+search,
+        url: "https://yts.ag/api/v2/list_movies.jsonp?page="+pageno+"&limit=20&query_term="+search,
         type: 'GET',
         dataType: "json",
-        crossDomain: false,
         beforeSend: function() {
           $("#wholecontainer").fadeOut(1);
           $("#footer").fadeOut(1);
